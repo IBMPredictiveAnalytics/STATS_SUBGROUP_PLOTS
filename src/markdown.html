@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>STATS SUBGROUP PLOTS Extension Command</title>
+
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+
+
+
+
+
+</head>
+
+<body>
+<h1>STATS SUBGROUP PLOTS Extension Command</h1>
+
+<p>Produce compartive plots for selected variables for a set of subgroups, each against all the data</p>
+<div class="syntax">
+<p>STATS SUBGROUP PLOTS<br/>
+SUBGROUP = <em>variable</em><sup>&#42;</sup><br/>
+VARIABLES = <em>variables</em><sup>&#42;</sup><br/>
+PRESORTED</p>
+
+<p>/OPTIONS<br/>
+ROWSIZE = <em>number</em><br/>
+XSIZE = <em>number</em><br/>
+YSIZE = <em>number</em><br/>
+YSCALE = <em>percentage</em><br/>
+HISTOGRAM = AREA<sup>&#42;&#42;</sup> or BARS or KERNEL<br/>
+SMOOTHPROP = <em>fraction</em><br/>
+SUBGROUPCOLOR = <em>colorname</em><br/>
+ALLDATACOLOR = <em>colorname</em><br/>
+SUBGROUPPATTERN = <em>patternname</em><br/>
+ALLDATAPATTERN = <em>patternname</em><br/>
+TRANSPARENCY = <em>fraction</em><br/>
+BINCOUNT = <em>number of bins</em><br/>
+TITLE=&ldquo;<em>title text</em>&rdquo;<br/>
+MISSING = VARIABLEWISE<sup>&#42;&#42;</sup> or LISTWISE<br/>
+TEMPDIR =&ldquo;<em>path</em>&rdquo;</p>
+
+<p>/HELP</p>
+
+<p><sup>&#42;</sup> Required<br/>
+<sup>&#42;&#42;</sup> Default</p>
+</div>
+<p>STATS SUBGROUP PLOTS /HELP displays this help and does nothing else.</p>
+
+<pre class="example"><code>STATS SUBGROUP PLOTS SUBGROUP=clusternumber VARIABLES=x y z
+/OPTIONS XSIZE=1 YSIZE=1.
+</code></pre>
+
+<p><strong>SUBGROUP</strong> specifies a numeric or string variable that defines the subgroups.  The dataset will be split by this variable.  Subgroup labels with partial transparency are overlaid on the charts.</p>
+
+<p><strong>VARIABLES</strong> lists the variables to be plotted.
+For scale measurement level variables, the plot is
+a histogram; for categorical variables, it is a bar chart.</p>
+
+<p>Specify <strong>PRESORTED</strong> if the data are already grouped by the split variable as appropriate for
+SPLIT FILES.</p>
+
+<h2>OPTIONS</h2>
+
+<p><strong>ROWSIZE</strong> specifies the number of variable plots per row.  It defaults to the number of variables (up
+to 10).  If there are more variables, each subgroup plot will have multiple rows.</p>
+
+<p><strong>HISTOGRAM</strong> specifies the form of the histograms produced for scale variables.</p>
+
+<ul>
+<li>AREA gives an area chart</li>
+<li>BARS gives bars</li>
+<li>KERNEL gives a smoothed distribution.  If this is specified, the entire-group distribution 
+and the subgroup distribution are scaled to the number of cases in each in Statistics 
+version 20 and earlier and to the same scale in newer versions.  For the other
+options, the distributions are on the same scale.</li>
+</ul>
+
+<p><strong>SMOOTHPROP</strong>=fraction specifies the proportion of data points to include 
+when calculating the smooth function.  It only applies to HISTOGRAM=kernel.</p>
+
+<p><strong>MISSING</strong>=VARIABLEWISE is the default and causes each plot to include all the
+cases where the variable is not missing.  MISSING=LISTWISE causes each plot
+only to include cases where no variables used in any plot are missing.  VARIABLEWISE
+maximizes the use of data while LISTWISE ensures a consistent case base across all plots.</p>
+
+<p><strong>XSIZE</strong> and <strong>YSIZE</strong> specify the horizontal and vertical size of each individual plot in inches.
+They default to 1.75 inches.</p>
+
+<p><strong>YSCALE</strong> can be specified as a percentage to shrink the plots in the vertical dimension.  This
+may be needed if the labels are clipped, which can happen with very small charts.</p>
+
+<p><strong>SUBGROUPCOLOR</strong> and <strong>ALLDATACOLOR</strong> specify the colors for these two groups in
+each plot.  Any GPL color constant can be used here.  See the general Help under GPL constants.
+Obvious names like red, blue, green, white, yellow work as well as many others.</p>
+
+<p><strong>SUBGROUPPATTERN</strong> and <strong>ALLDATAPATTERN</strong> specify the patterns to be used for
+these two groups.  Any GPL pattern constant can be used here.  See the GPL help.
+names like grid, and mesh will work as well as others.</p>
+
+<p><strong>TRANSPARENCY</strong> can be specified as a percentage to control how the elements
+behind other elements show through.  TRANSPARENCY=0, e.g., means no transparency,
+and TRANSPARENCY=100 means completely transparent.
+The default is 75.</p>
+
+<p><strong>TITLE</strong> can specify a title for the outline.  The subgroup information will be appended to it.</p>
+
+</body>
+
+</html>
+
