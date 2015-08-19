@@ -1,0 +1,26 @@
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Jon Peck (SPSS Inc.) -->
+<Command xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extension-1.0.xsd" Name="STATS SUBGROUP PLOTS" Language="Python">
+	<Subcommand Name="" IsArbitrary="False" Occurrence="Optional">
+		<Parameter Name="SUBGROUP" ParameterType="VariableName"/>
+		<Parameter Name="VARIABLES" ParameterType="VariableNameList"/>
+		<Parameter Name="PRESORTED" ParameterType="Keyword"/>
+	</Subcommand>
+	<Subcommand Name="OPTIONS">
+		<Parameter Name="TITLE" ParameterType="QuotedString"/>
+		<Parameter Name="ROWSIZE" ParameterType="Integer"/>
+		<Parameter Name="HISTOGRAM" ParameterType="Keyword"/>
+		<Parameter Name="YSCALE" ParameterType="Integer"/>
+		<Parameter Name="XSIZE" ParameterType="Number"/>
+		<Parameter Name="YSIZE" ParameterType="Number"/>
+		<Parameter Name="SUBGROUPCOLOR" ParameterType="Keyword"/>
+		<Parameter Name="ALLDATACOLOR" ParameterType="Keyword"/>
+		<Parameter Name="ALLDATAPATTERN" ParameterType="Keyword"/>
+		<Parameter Name="SUBGROUPPATTERN" ParameterType="Keyword"/>
+		<Parameter Name="TRANSPARENCY" ParameterType="Number"/>
+		<Parameter Name="MISSING" ParameterType="Keyword"/>
+		<Parameter Name="TEMPDIR" ParameterType="QuotedString"/>
+		<Parameter Name="BINCOUNT" ParameterType="Integer"/>
+		<Parameter Name="SMOOTHPROP" ParameterType="Number"/>
+	</Subcommand>
+	<Subcommand Name="HELP" Occurrence="Optional"/>
+</Command>
