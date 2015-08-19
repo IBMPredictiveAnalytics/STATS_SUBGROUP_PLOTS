@@ -1,0 +1,18 @@
+Name: STATS SUBGROUP PLOTS
+Dialog-Specs: STATS_SUBGROUP_PLOTS.spd
+Command-Specs: STATS_SUBGROUP_PLOTS.xml
+Code-Files: STATS_SUBGROUP_PLOTS.py
+Misc-Files: extsyntax.css,markdown.html,IBMdialogicon.png
+Summary: Graphically compare the distributions of a set of variables a
+ cross a partition of the data
+Description: This procedure produces a set of small plots for specifie
+ d variables for each subgroup in a dataset.  Each plot shows the dist
+ ribution of a variable in that subgroup overlaid on the distribution 
+ of the entire dataset.  The type of plot depends on the measurement l
+ evel of the variable.
+Author: JKP, IBM SPSS
+Version: 1.2.5
+Product-Version: 18
+Date: 1/2/2014
+Plugins: Python
+Translation-Catalogues: lang
