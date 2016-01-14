@@ -248,6 +248,7 @@ def ggraph(variables, weight, tempname, title, missing, alldatacolor):
         
     gg = r"""GGRAPH /GRAPHDATASET NAME="graphdataset" MISSING=%(missing)s
 VARIABLES= %(varspecstr)s
+/GRAPHDATASET NAME="csvdataset" CSVFILE="%(tempname)s"
 /GRAPHSPEC SOURCE=INLINE EDITABLE=NO DEFAULTTEMPLATE=NO LABEL="%(title)s"
 inlinetemplate='<addFrame count="1" type="subtitle">'+
 '<location left="0%%" right="100%%" top="0%%" bottom="0.2in"/>'+
