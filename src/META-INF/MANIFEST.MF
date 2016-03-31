@@ -11,8 +11,8 @@ Description: This procedure produces a set of small plots for specifie
  of the entire dataset.  The type of plot depends on the measurement l
  evel of the variable.
 Author: JKP, IBM SPSS
-Version: 1.2.5
+Version: 1.2.6
 Product-Version: 18
-Date: 1/2/2014
+Date: 3/31/2016
 Plugins: Python
 Translation-Catalogues: lang

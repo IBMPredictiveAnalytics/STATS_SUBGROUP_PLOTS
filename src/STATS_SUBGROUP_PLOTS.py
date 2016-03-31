@@ -1,11 +1,11 @@
 #Licensed Materials - Property of IBM
 #IBM SPSS Products: Statistics General
-#(c) Copyright IBM Corp. 2015
+#(c) Copyright IBM Corp. 2016
 #US Government Users Restricted Rights - Use, duplication or disclosure 
 #restricted by GSA ADP Schedule Contract with IBM Corp.
 
 __author__ = "JKP, IBM SPSS"
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 
 # history
 # 09-21-2011  original version
@@ -165,7 +165,7 @@ def plots(subgroup, vars, ignore=False,
     # includes only necessary variables and selected cases
     tempname = getTempDir(tempdir) + "/spsssubgroupplots" + str(random.random()) + ".csv"
     dk.kill()  # suppress date formats, because the csv file doesn't handle them well
-    if spssver21ok and spss.PyInvokeSpss.IsUTF8mode():
+    if spssver21ok:
         csvencoding="""/ENCODING="UTF8" """
     else:
         csvencoding = ""
@@ -248,6 +248,7 @@ def ggraph(variables, weight, tempname, title, missing, alldatacolor):
         
     gg = r"""GGRAPH /GRAPHDATASET NAME="graphdataset" MISSING=%(missing)s
 VARIABLES= %(varspecstr)s
+/GRAPHDATASET NAME="csvdataset" CSVFILE="%(tempname)s"
 /GRAPHSPEC SOURCE=INLINE EDITABLE=NO DEFAULTTEMPLATE=NO LABEL="%(title)s"
 inlinetemplate='<addFrame count="1" type="subtitle">'+
 '<location left="0%%" right="100%%" top="0%%" bottom="0.2in"/>'+
