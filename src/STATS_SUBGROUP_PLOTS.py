@@ -1,9 +1,13 @@
-#Licensed Materials - Property of IBM
-#IBM SPSS Products: Statistics General
-#(c) Copyright IBM Corp. 2016
-#US Government Users Restricted Rights - Use, duplication or disclosure 
-#restricted by GSA ADP Schedule Contract with IBM Corp.
-
+#/***********************************************************************
+# * Licensed Materials - Property of IBM
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2020
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp.
+# ************************************************************************/
 __author__ = "JKP, IBM SPSS"
 __version__ = "1.0.5"
 
@@ -303,7 +307,7 @@ DATASET ACTIVATE %(ads)s.""" % locals())
                 datadict[v] = (themin, themax)
             
     for v in catvars:
-        values = vardict[v].ValueLabels.keys()
+        values = list(vardict[v].ValueLabels.keys())
         if values:
             vlvalues = ['"' + item.replace('"', '\\"') + '"' for item in values]  # protect interior " characters
             statsdict[v] = cattemplate % ",".join(vlvalues)
@@ -544,7 +548,7 @@ class Aname(object):
         self.avars = {}
         for v in varlist:
             trialname = self.sized(v + str(random.randint(0,9999)))
-            while trialname in self.avars.values():   # these dictionaries will be small
+            while trialname in list(self.avars.values()):   # these dictionaries will be small
                 trialname = self.sized(v + str(random.randint(0,9999)))
             self.avars[v] = trialname
     
@@ -582,7 +586,7 @@ def getsplitinfo():
 def Run(args):
     """Execute the STATS SUBsubgroup PLOTS command"""
 
-    args = args[args.keys()[0]]
+    args = args[list(args.keys())[0]]
     ###print args   #debug
     
 
@@ -616,7 +620,7 @@ def Run(args):
             return msg
 
         # A HELP subcommand overrides all else
-    if args.has_key("HELP"):
+    if "HELP" in args:
         #print helptext
         helper()
     else:
@@ -637,7 +641,7 @@ def helper():
     # webbrowser.open seems not to work well
     browser = webbrowser.get()
     if not browser.open_new(helpspec):
-        print("Help file not found:" + helpspec)
+        print(("Help file not found:" + helpspec))
 try:    #override
     from extension import helper
 except:
@@ -706,7 +710,7 @@ except:
 def attributesFromDict(d):
     """build self attributes from a dictionary d."""
     self = d.pop('self')
-    for name, value in d.iteritems():
+    for name, value in d.items():
         setattr(self, name, value)
         
     """Manage a log file"""
