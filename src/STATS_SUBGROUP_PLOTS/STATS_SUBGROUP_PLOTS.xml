@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Extension xmlns="http://spss.com/clementine/extensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" debug="false" version="1.0" xsi:schemaLocation="http://spss.com/clementine/extensions http://xml.spss.com/clementine/extensions/CLEFSpecificationFile.xsd">
+	<ExtensionDetails copyright="Licensed Materials - Property of IBM.  IBM SPSS Products: Statistics Common (C) Copyright IBM Corp. 1989, 2013.  US Government Users Restricted Rights - Use, duplication or  disclosure restricted by GSA ADP Schedule Contract with IBM Corp." description="" id="STATS_SUBGROUP_PLOTS" label="" provider="SPSS, Inc." providerTag="spss" version="1.0"/>
+	<Resources>
+		<Bundle id="bundle1" path="STATS_SUBGROUP_PLOTS" type="properties"/>
+	</Resources>
+	<CommonObjects>
+		<Actions>
+			<Action id="STATS_SUBGROUP_PLOTS_action" imagePath="IBMdialogicon.png" label="Compare Subgroups" labelKey="STATS_SUBGROUP_PLOTS_action.LABEL"/>
+		</Actions>
+	</CommonObjects>
+	<UserInterface>
+		<Controls>
+			<MenuItem action="STATS_SUBGROUP_PLOTS_action" offset="3" showIcon="true" spssMenu="Graphs"/>
+		</Controls>
+	</UserInterface>
+	<Node id="STATS_SUBGROUP_PLOTS" label="Compare Subgroups" labelKey="STATS_SUBGROUP_PLOTS.LABEL" type="modelBuilder">
+		<Properties>
+			<Property name="STATS_SUBGROUP_PLOTS" syntax="STATS SUBGROUP PLOTS %%subgroup%% %%variables%% %%presorted%%&#10;/OPTIONS %%xsize%% %%ysize%% %%yscale%% %%alldatacolorcombo%% %%subgroupcolorcombo%% %%transparency%%&#10;%%alldatapattern%% %%subgrouppattern%% %%title%% %%bincount%% %%smoothprop%% %%rowsize%%&#10;%%missing%% %%histogram%% %%tempdir%%&#10;"/>
+			<Property description="false" name="STATS_SUBGROUP_PLOTS_modal"/>
+			<Property description="" descriptionKey="source_vars_tooltip.LABEL" isList="true" label="Variables:" labelKey="source_vars.LABEL" name="source_vars" selectionPool="source_fields" syntax="%%ThisValue%%" valueType="field"/>
+			<Property description="Select a categorical variable that defines the subgroups" descriptionKey="subgroup_tooltip.LABEL" isList="true" isRequired="true" label="Subgroups Defined by:" labelKey="subgroup.LABEL" name="subgroup" selectionPool="source_fields" syntax="SUBGROUP=%%ThisValue%%" valueType="field"/>
+			<Property description="Select the variables whose distributions should be shown" descriptionKey="variables_tooltip.LABEL" isList="true" isRequired="true" label="Variables to Plot" labelKey="variables.LABEL" name="variables" selectionPool="source_fields" syntax="VARIABLES=%%ThisValue%%" valueType="field"/>
+			<Property defaultValue="false" description="Check to save a sorting pass if the data are already sorted by the subgroup variable" descriptionKey="presorted_tooltip.LABEL" label="Cases are sorted by the subgroup variable" labelKey="presorted.LABEL" name="presorted" syntax="PRESORTED=YES±" valueType="boolean"/>
+			<Property description="" descriptionKey="chartsize_tooltip.LABEL" label="Individual Chart Size" labelKey="chartsize.LABEL" name="chartsize" syntax="%%ThisValue%%"/>
+			<Property defaultValue="1.75" description="Enter the horizontal (x) size for each individual chart" descriptionKey="xsize_tooltip.LABEL" isRequired="true" label="Horizontal Size in Inches" labelKey="xsize.LABEL" min="0.100000" name="xsize" syntax="XSIZE=%%ThisValue%%" valueType="double"/>
+			<Property defaultValue="1.75" description="Enter the vertical (y) size for each individual chart" descriptionKey="ysize_tooltip.LABEL" isRequired="true" label="Vertical Size in Inches" labelKey="ysize.LABEL" min="0.100000" name="ysize" syntax="YSIZE=%%ThisValue%%" valueType="double"/>
+			<Property defaultValue="90" description="With very small charts (1 inch, the scaling percentage may need to be reduced to fully display the variable names" descriptionKey="yscale_tooltip.LABEL" label="Vertical Chart Scaling Percentage" labelKey="yscale.LABEL" max="100.000000" min="30.000000" name="yscale" syntax="YSCALE=%%ThisValue%%" valueType="double"/>
+			<Property description="" descriptionKey="colors_tooltip.LABEL" label="Colors" labelKey="colors.LABEL" name="colors" syntax="%%ThisValue%%"/>
+			<Property defaultValue="item_198_a" description="Choose a color for the bars for the entire dataset" descriptionKey="alldatacolorcombo_tooltip.LABEL" label="All Data:" labelKey="alldatacolorcombo.LABEL" name="alldatacolorcombo" syntax="ALLDATACOLOR=%%ThisValue%%" valueType="enum">
+				<Enumeration>
+					<Enum label="whitesmoke" labelKey="item_198_a.LABEL" syntax="whitesmoke" value="item_198_a"/>
+					<Enum label="lightblue" labelKey="item_198_b.LABEL" syntax="lightblue" value="item_198_b"/>
+					<Enum label="blue" labelKey="alldatacolorcombo_c.LABEL" syntax="blue" value="alldatacolorcombo_c"/>
+					<Enum label="midnightblue" labelKey="alldatacolorcombo_e.LABEL" syntax="midnightblue" value="alldatacolorcombo_e"/>
+					<Enum label="silver" labelKey="alldatacolorcombo_f.LABEL" syntax="silver" value="alldatacolorcombo_f"/>
+					<Enum label="white" labelKey="alldatacolorcombo_g.LABEL" syntax="white" value="alldatacolorcombo_g"/>
+					<Enum label="red" labelKey="alldatacolorcombo_h.LABEL" syntax="red" value="alldatacolorcombo_h"/>
+					<Enum label="darkred" labelKey="alldatacolorcombo_i.LABEL" syntax="darkred" value="alldatacolorcombo_i"/>
+					<Enum label="deeppink" labelKey="alldatacolorcombo_j.LABEL" syntax="deeppink" value="alldatacolorcombo_j"/>
+					<Enum label="green" labelKey="alldatacolorcombo_l.LABEL" syntax="green" value="alldatacolorcombo_l"/>
+					<Enum label="lightgreen" labelKey="alldatacolorcombo_m.LABEL" syntax="lightgreen" value="alldatacolorcombo_m"/>
+					<Enum label="yellow" labelKey="alldatacolorcombo_n.LABEL" syntax="yellow" value="alldatacolorcombo_n"/>
+					<Enum label="lightyellow" labelKey="alldatacolorcombo_o.LABEL" syntax="lightyellow" value="alldatacolorcombo_o"/>
+					<Enum label="black" labelKey="alldatacolorcombo_p.LABEL" syntax="black" value="alldatacolorcombo_p"/>
+					<Enum label="khaki" labelKey="alldatacolorcombo_q.LABEL" syntax="khaki" value="alldatacolorcombo_q"/>
+				</Enumeration>
+			</Property>
+			<Property defaultValue="item_197_a" description="Choose a color for the bars for each subgroup" descriptionKey="subgroupcolorcombo_tooltip.LABEL" label="Subgroups:" labelKey="subgroupcolorcombo.LABEL" name="subgroupcolorcombo" syntax="SUBGROUPCOLOR=%%ThisValue%%" valueType="enum">
+				<Enumeration>
+					<Enum label="blue" labelKey="item_197_a.LABEL" syntax="blue" value="item_197_a"/>
+					<Enum label="lightblue" labelKey="item_197_b.LABEL" syntax="lightblue" value="item_197_b"/>
+					<Enum label="midnightblue" labelKey="item_197_d.LABEL" syntax="midnightblue" value="item_197_d"/>
+					<Enum label="silver" labelKey="item_197_e.LABEL" syntax="silver" value="item_197_e"/>
+					<Enum label="white" labelKey="item_197_f.LABEL" syntax="white" value="item_197_f"/>
+					<Enum label="whitesmoke" labelKey="item_197_g.LABEL" syntax="whitesmoke" value="item_197_g"/>
+					<Enum label="red" labelKey="item_197_h.LABEL" syntax="red" value="item_197_h"/>
+					<Enum label="deeppink" labelKey="item_197_i.LABEL" syntax="deeppink" value="item_197_i"/>
+					<Enum label="green" labelKey="item_197_k.LABEL" syntax="green" value="item_197_k"/>
+					<Enum label="lightgreen" labelKey="item_197_l.LABEL" syntax="lightgreen" value="item_197_l"/>
+					<Enum label="yellow" labelKey="item_197_m.LABEL" syntax="yellow" value="item_197_m"/>
+					<Enum label="lightyellow" labelKey="item_197_n.LABEL" syntax="lightyellow" value="item_197_n"/>
+					<Enum label="black" labelKey="item_197_o.LABEL" syntax="black" value="item_197_o"/>
+					<Enum label="khaki" labelKey="item_197_p.LABEL" syntax="khaki" value="item_197_p"/>
+				</Enumeration>
+			</Property>
+			<Property defaultValue="50" description="Choose a number between 0 and 100 for the degree of transparency of the subgroup bars" descriptionKey="transparency_tooltip.LABEL" label="Transparency Percentage" labelKey="transparency.LABEL" max="100.000000" min="0.000000" name="transparency" syntax="TRANSPARENCY=%%ThisValue%%" valueType="double"/>
+			<Property description="" descriptionKey="patterns_tooltip.LABEL" label="Patterns" labelKey="patterns.LABEL" name="patterns" syntax="%%ThisValue%%"/>
+			<Property defaultValue="item_64_a" description="Choose a patterns for the bars for the entire dataset" descriptionKey="alldatapattern_tooltip.LABEL" label="All Data:" labelKey="alldatapattern.LABEL" name="alldatapattern" syntax="ALLDATAPATTERN=%%ThisValue%%" valueType="enum">
+				<Enumeration>
+					<Enum label="solid" labelKey="item_64_a.LABEL" syntax="solid" value="item_64_a"/>
+					<Enum label="checkered" labelKey="alldatapattern_a.LABEL" syntax="checkered" value="alldatapattern_a"/>
+					<Enum label="grid" labelKey="alldatapattern_b.LABEL" syntax="grid" value="alldatapattern_b"/>
+					<Enum label="grid2" labelKey="alldatapattern_c.LABEL" syntax="grid2" value="alldatapattern_c"/>
+					<Enum label="grid3" labelKey="alldatapattern_d.LABEL" syntax="grid3" value="alldatapattern_d"/>
+					<Enum label="grid4" labelKey="alldatapattern_e.LABEL" syntax="grid4" value="alldatapattern_e"/>
+					<Enum label="grid5" labelKey="alldatapattern_f.LABEL" syntax="grid5" value="alldatapattern_f"/>
+					<Enum label="mesh" labelKey="alldatapattern_g.LABEL" syntax="mesh" value="alldatapattern_g"/>
+					<Enum label="mesh2" labelKey="alldatapattern_h.LABEL" syntax="mesh2" value="alldatapattern_h"/>
+					<Enum label="mesh3" labelKey="alldatapattern_i.LABEL" syntax="mesh3" value="alldatapattern_i"/>
+					<Enum label="mesh4" labelKey="alldatapattern_j.LABEL" syntax="mesh4" value="alldatapattern_j"/>
+					<Enum label="mesh5" labelKey="alldatapattern_k.LABEL" syntax="mesh5" value="alldatapattern_k"/>
+					<Enum label="pluses" labelKey="alldatapattern_l.LABEL" syntax="pluses" value="alldatapattern_l"/>
+					<Enum label="pluses2" labelKey="alldatapattern_m.LABEL" syntax="pluses2" value="alldatapattern_m"/>
+				</Enumeration>
+			</Property>
+			<Property defaultValue="item_63_a" description="Choose a pattern for the subgroups" descriptionKey="subgrouppattern_tooltip.LABEL" label="Subgroups:" labelKey="subgrouppattern.LABEL" name="subgrouppattern" syntax="SUBGROUPPATTERN=%%ThisValue%%" valueType="enum">
+				<Enumeration>
+					<Enum label="solid" labelKey="item_63_a.LABEL" syntax="solid" value="item_63_a"/>
+					<Enum label="checkered" labelKey="subgrouppattern_a.LABEL" syntax="checkered" value="subgrouppattern_a"/>
+					<Enum label="grid" labelKey="subgrouppattern_b.LABEL" syntax="grid" value="subgrouppattern_b"/>
+					<Enum label="grid2" labelKey="subgrouppattern_c.LABEL" syntax="grid2" value="subgrouppattern_c"/>
+					<Enum label="grid3" labelKey="subgrouppattern_d.LABEL" syntax="grid3" value="subgrouppattern_d"/>
+					<Enum label="grid4" labelKey="subgrouppattern_e.LABEL" syntax="grid4" value="subgrouppattern_e"/>
+					<Enum label="mesh" labelKey="subgrouppattern_f.LABEL" syntax="mesh" value="subgrouppattern_f"/>
+					<Enum label="mesh2" labelKey="subgrouppattern_g.LABEL" syntax="mesh2" value="subgrouppattern_g"/>
+					<Enum label="mesh3" labelKey="subgrouppattern_h.LABEL" syntax="mesh3" value="subgrouppattern_h"/>
+					<Enum label="mesh4" labelKey="subgrouppattern_i.LABEL" syntax="mesh4" value="subgrouppattern_i"/>
+					<Enum label="mesh5" labelKey="subgrouppattern_j.LABEL" syntax="mesh5" value="subgrouppattern_j"/>
+					<Enum label="pluses" labelKey="subgrouppattern_k.LABEL" syntax="pluses" value="subgrouppattern_k"/>
+					<Enum label="pluses2" labelKey="subgrouppattern_l.LABEL" syntax="pluses2" value="subgrouppattern_l"/>
+				</Enumeration>
+			</Property>
+			<Property defaultValue="item_31_a" description="Choose bars or, for a smooth curve, choose area" descriptionKey="histogram_tooltip.LABEL" label="Histogram Shape" labelKey="histogram.LABEL" name="histogram" syntax="HISTOGRAM=%%ThisValue%%" valueType="enum">
+				<Enumeration>
+					<Enum description="Choose this for a smooth curve" descriptionKey="item_31_a_tooltip.LABEL" hasSubGroup="false" label="Area" labelKey="item_31_a.LABEL" mnemonic="E" mnemonicKey="item_31_a_mnemonic.VALUE" syntax="AREA" value="item_31_a"/>
+					<Enum description="" descriptionKey="item_31_b_tooltip.LABEL" hasSubGroup="false" label="Bars" labelKey="item_31_b.LABEL" mnemonic="B" mnemonicKey="item_31_b_mnemonic.VALUE" syntax="BARS" value="item_31_b"/>
+					<Enum description="" descriptionKey="histogram_a_tooltip.LABEL" hasSubGroup="false" label="Kernel Smoother" labelKey="histogram_a.LABEL" mnemonic="K" mnemonicKey="histogram_a_mnemonic.VALUE" syntax="KERNEL" value="histogram_a"/>
+				</Enumeration>
+			</Property>
+			<Property defaultValue=".05" description="Small values smooth less." descriptionKey="smoothprop_tooltip.LABEL" label="Proportion for Kernel Smoother" labelKey="smoothprop.LABEL" max="1.000000" min="0.000000" name="smoothprop" syntax="SMOOTHPROP=%%ThisValue%%" valueType="double"/>
+			<Property defaultValue="20" description="Number of bins for the histograms" descriptionKey="bincount_tooltip.LABEL" label="Histogram Bin Count:" labelKey="bincount.LABEL" min="2" name="bincount" syntax="BINCOUNT=%%ThisValue%%" valueType="integer"/>
+			<Property defaultValue="" description="Select a temporary directory if default behavior does not work" descriptionKey="tempdir_tooltip.LABEL" label="Temporary Directory:" labelKey="tempdir.LABEL" name="tempdir" syntax="TEMPDIR=%%ThisValue%%" tempdir_filter="All File Types (*.*)|*.*|A^" valueType="string"/>
+			<Property defaultValue="" description="Enter text to be combined with the subgroup description as the outline label" descriptionKey="title_tooltip.LABEL" label="Outline Label:" labelKey="title.LABEL" name="title" syntax="TITLE=&quot;%%ThisValue%%&quot;" valueType="string"/>
+			<Property defaultValue="item_328_a" description="" descriptionKey="missing_tooltip.LABEL" label="Missing Values" labelKey="missing.LABEL" name="missing" syntax="MISSING=%%ThisValue%%" valueType="enum">
+				<Enumeration>
+					<Enum description="Use all cases available for each plot" descriptionKey="item_328_a_tooltip.LABEL" hasSubGroup="false" label="By variable" labelKey="item_328_a.LABEL" mnemonic="Y" mnemonicKey="item_328_a_mnemonic.VALUE" syntax="VARIABLEWISE" value="item_328_a"/>
+					<Enum description="Use only cases with  no missing data" descriptionKey="item_328_b_tooltip.LABEL" hasSubGroup="false" label="Listwise" labelKey="item_328_b.LABEL" mnemonic="L" mnemonicKey="item_328_b_mnemonic.VALUE" syntax="LISTWISE" value="item_328_b"/>
+				</Enumeration>
+			</Property>
+			<Property defaultValue="" description="By default, up to ten charts per row appear." descriptionKey="rowsize_tooltip.LABEL" label="Charts Per Row:" labelKey="rowsize.LABEL" min="1" name="rowsize" syntax="ROWSIZE=%%ThisValue%%" valueType="integer"/>
+		</Properties>
+		<SelectionPool id="source_fields" type="fields"/>
+		<UserInterface>
+			<Tabs>
+				<Tab helpLink="STATS_SUBGROUP_PLOTS.htm">
+					<PropertiesPanel>
+						<SourceFieldsBrowser copyFields="true" mnemonic="V" mnemonicKey="source_vars_mnemonic.VALUE" property="source_vars" selectionPool="source_fields" storage="[real integer date time string]">
+							<Layout columnWeight="1.0" fill="both" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="1.0"/>
+						</SourceFieldsBrowser>
+						<SingleFieldChooserControl mnemonic="S" mnemonicKey="subgroup_mnemonic.VALUE" property="subgroup" storage="[real integer date time string]" types="[set orderedSet]">
+							<Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+						</SingleFieldChooserControl>
+						<MultiFieldChooserControl mnemonic="A" mnemonicKey="variables_mnemonic.VALUE" property="variables" storage="[real integer date time string]">
+							<Layout columnWeight="1.0" fill="both" gridColumn="2" gridRow="1" gridWidth="1" rowWeight="1.0"/>
+						</MultiFieldChooserControl>
+						<CheckBoxControl mnemonic="C" mnemonicKey="presorted_mnemonic.VALUE" property="presorted">
+							<Layout columnWeight="1.0" fill="none" gridColumn="2" gridRow="2" gridWidth="1" rowWeight="0.0"/>
+						</CheckBoxControl>
+						<PropertiesSubPanel buttonLabel="Options..." buttonLabelKey="options.LABEL" dialogTitle="Options" dialogTitleKey="Options.TITLE" helpLink="" mnemonic="O" mnemonicKey="options_mnemonic.VALUE">
+							<Layout columnWeight="0.0" fill="none" gridColumn="3" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+							<PropertiesPanel>
+								<PropertiesPanel id="chartsize" label="Individual Chart Size" labelKey="chartsize.LABEL">
+									<Layout columnWeight="1.0" fill="both" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="1.0"/>
+									<TextBoxControl mnemonic="H" mnemonicKey="xsize_mnemonic.VALUE" property="xsize">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+									</TextBoxControl>
+									<TextBoxControl mnemonic="V" mnemonicKey="ysize_mnemonic.VALUE" property="ysize">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="0.0"/>
+									</TextBoxControl>
+									<TextBoxControl mnemonic="C" mnemonicKey="yscale_mnemonic.VALUE" property="yscale">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="2" gridWidth="1" rowWeight="1.0"/>
+									</TextBoxControl>
+								</PropertiesPanel>
+								<PropertiesPanel id="colors" label="Colors" labelKey="colors.LABEL">
+									<Layout columnWeight="1.0" fill="both" gridColumn="1" gridRow="0" gridWidth="1" rowWeight="1.0"/>
+									<ComboBoxControl attr_name="" based_on="variable_names" mnemonic="A" mnemonicKey="alldatacolorcombo_mnemonic.VALUE" property="alldatacolorcombo" target_id="" use_values="false">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+									</ComboBoxControl>
+									<ComboBoxControl attr_name="" based_on="variable_names" mnemonic="S" mnemonicKey="subgroupcolorcombo_mnemonic.VALUE" property="subgroupcolorcombo" target_id="" use_values="false">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="1.0"/>
+									</ComboBoxControl>
+								</PropertiesPanel>
+								<TextBoxControl mnemonic="T" mnemonicKey="transparency_mnemonic.VALUE" property="transparency">
+									<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="2" gridWidth="1" rowWeight="0.0"/>
+								</TextBoxControl>
+								<PropertiesPanel id="patterns" label="Patterns" labelKey="patterns.LABEL">
+									<Layout columnWeight="1.0" fill="both" gridColumn="1" gridRow="1" gridWidth="1" rowWeight="1.0"/>
+									<ComboBoxControl attr_name="" based_on="variable_names" mnemonic="D" mnemonicKey="alldatapattern_mnemonic.VALUE" property="alldatapattern" target_id="" use_values="false">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+									</ComboBoxControl>
+									<ComboBoxControl attr_name="" based_on="variable_names" mnemonic="U" mnemonicKey="subgrouppattern_mnemonic.VALUE" property="subgrouppattern" target_id="" use_values="false">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="0.0"/>
+									</ComboBoxControl>
+									<RadioButtonGroupControl property="histogram" rows="3" useSubPanel="false">
+										<Layout columnWeight="1.0" fill="both" gridColumn="0" gridRow="2" gridWidth="1" rowWeight="0.0"/>
+										<RadioButton property="item_31_a"/>
+										<RadioButton property="item_31_b"/>
+										<RadioButton property="histogram_a"/>
+									</RadioButtonGroupControl>
+									<TextBoxControl mnemonic="P" mnemonicKey="smoothprop_mnemonic.VALUE" property="smoothprop">
+										<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="3" gridWidth="1" rowWeight="1.0"/>
+									</TextBoxControl>
+								</PropertiesPanel>
+								<TextBoxControl mnemonic="H" mnemonicKey="bincount_mnemonic.VALUE" property="bincount">
+									<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="3" gridWidth="1" rowWeight="0.0"/>
+								</TextBoxControl>
+								<ServerDirectoryChooserControl mnemonic="M" mnemonicKey="tempdir_mnemonic.VALUE" mode="open" property="tempdir">
+									<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="5" gridWidth="1" rowWeight="0.0"/>
+								</ServerDirectoryChooserControl>
+								<TextBoxControl mnemonic="O" mnemonicKey="title_mnemonic.VALUE" property="title">
+									<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="4" gridWidth="1" rowWeight="0.0"/>
+								</TextBoxControl>
+								<RadioButtonGroupControl property="missing" rows="2" useSubPanel="false">
+									<Layout columnWeight="1.0" fill="both" gridColumn="1" gridRow="2" gridWidth="1" rowWeight="1.0"/>
+									<RadioButton property="item_328_a"/>
+									<RadioButton property="item_328_b"/>
+								</RadioButtonGroupControl>
+								<TextBoxControl mnemonic="R" mnemonicKey="rowsize_mnemonic.VALUE" property="rowsize">
+									<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="0.0"/>
+								</TextBoxControl>
+							</PropertiesPanel>
+						</PropertiesSubPanel>
+						<StaticText text="This dialog was created using a later version of PASW Statistics\nand certain features may not function as intended." textKey="v17_warning.LABEL">
+							<Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="1.0"/>
+						</StaticText>
+					</PropertiesPanel>
+				</Tab>
+			</Tabs>
+		</UserInterface>
+	</Node>
+</Extension>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>サンプル全体に対するサブグループの変数の作図</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>サンプル全体に対するサブグループの変数の作図</h1>この手順では、データのサブグループから選択された変数の小規模な図表を生成します。
+各図表には、サンプル全体の分布の上に、サブグループの分布がオーバーレイされたものが表示されます。これはクラスタ化の結果を理解する場合に特に便利ですが、
+あらゆるカテゴリ変数を使用してグループを定義できます。
+<p><span class="runinhead">サブグループの定義:</span> プロットするサブグループを定義するための変数を選択します。
+この変数の異なる数値ごとに図表が生成されます。</p>
+
+  <p><span class="runinhead">プロット対象変数:</span> 分布をプロットする変数を選択します。
+カテゴリ変数の場合、棒グラフが生成されます。カテゴリ変数の場合、図表はヒストグラムになります。
+変数の数が行サイズの制限を超える場合 (「オプション」サブダイアログ参照)、図表の各セットで複数行が使用されます。</p>
+
+  <p class="bullet">• グラフでは、スペースの制約から目盛りのマークやラベルは含まれません。
+スケール変数の場合、軸範囲はデータセット全体の最小データから最大データまでになります。
+カテゴリ変数の場合、ラベルが付けられたすべての値とサブグループ内で検出されたその他のすべての値が含まれます。</p>
+
+  <p><span class="runinhead">ケースはサブグループ変数により並べ替え済み:</span> データが既にサブグループ変数により並べ替えられている場合は、追加の並べ替え手順を省くために、このボックスにチェック マークを付けてください。</p>
+
+  <h2>オプション</h2>
+
+  <p><span class="runinhead">個別の図表サイズ:</span> 図表の水平方向および垂直方向の寸法をインチ単位で入力します。
+このサイズは個別の図表に対するものであり、表示全体のサイズではありません。
+水平方向のサイズが 2 インチであり、5 個の変数がある場合、各サブグループの図表のセットの幅は 10 インチになります。</p>
+
+  <p><span class="runinhead">図表の垂直スケーリング パーセンテージ:</span> 図表のデータ領域を垂直方向に縮小するパーセンテージを入力します。
+デフォルト値である 90 を変更する必要があるのは、非常に小さい図表などで横軸のラベルが切れてしまう場合のみです。</p>
+
+  <p><span class="runinhead">行ごとの図表数:</span> デフォルトでは、1 つのサブグループのすべての図表が 1 行に表示されます (最大 10 個)。
+1 行に表示する図表の最大数を指定します。必要に応じて、各サブグループの図表の追加行が表示されます。</p>
+
+  <p><span class="runinhead">透過性パーセンテージ:</span> 各図表では、サブグループの変数の分布を、データセット全体の分布に重ね合わせて表示します。
+透過性パーセンテージは、全体の分布がサブグループの分布でどの程度透けて見えるかを制御します。0 は透過性なし、100 は完全な透過を意味します。</p>
+
+  <p><span class="runinhead">ヒストグラムの形状:</span> ヒストグラムを面として表示するには「面グラフ」を選択し、棒で表示するには「棒グラフ」を選択します。
+平滑化された密度関数を表示するには、「カーネル平滑化」を選択します。</p>
+
+  <p class="bullet">• カーネル平滑化では、グループ全体とサブグループの分布が、含まれるポイントの数に応じてそれぞれスケーリングされます。
+それ以外の場合、2 つの図表では同じ尺度が使用されます。</p>
+
+  <p><span class="runinhead">カーネル平滑化の比率:</span>
+  密度関数の推定を計算するために使用されるポイントの比率を指定します。</p>
+
+  <p><span class="runinhead">欠損値:</span> 欠損値の処置を選択します。
+<span class="screen">「変数別」</span>の場合、各グラフは変数で使用可能なデータをすべて使用します。
+<span class="screen">「リストごと」</span>の場合、グラフ化された変数が 1 つも欠落していないケースのみが各グラフで使用されます。
+「変数別」は各グラスのデータを最大化し、「リストごと」はグラフ全体での一貫性のあるケース基準を確保します。</p>
+
+  <p><span class="runinhead">アウトライン ラベル:</span> ビューアのアウトラインでグラフの各セットにラベルを付けるために使用するテキストを入力します。
+このテキストに、サブグループ ID が追加されます。</p>
+
+  <p><span class="runinhead">一時ディレクトリ:</span> この手順で作成される中間データ ファイル用に、一時ディレクトリを選択できます。
+この値を設定する必要があるのは、手順で一時ディレクトリを見つけることができない場合のみです。技術的な理由から、この手順では、このディレクトリに書き込むファイルを削除することはできません。特定のディレクトリを指定することで、そのようなファイルを見つけて削除することが容易になります。</p>
+
+  <p><span class="runinhead">色:</span> データセット全体の棒とサブグループの棒の色を選択します。
+色の選択がここにリストされますが、さらに多くの色がシンタックスで使用可能です。
+完全なリストについては、メイン ヘルプの GPL の色定数を参照してください。</p>
+
+  <p><span class="runinhead">パターン:</span> データセット全体の棒とサブグループの棒のパターンを選択します。デフォルトでは、棒は実線です。</p>
+
+  <h2>その他の機能</h2>
+
+  <p>このダイアログでは、STATS SUBGROUP PLOTS 拡張コマンドのシンタックスが生成されます。このコマンドのシンタックスのヘルプを表示するには、次のシンタックスを実行します。</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP</p>
+
+  <h2>要件</h2>このコマンドには、Python Essentials および STATS SUBGROUP PLOTS 拡張コマンドと、IBM SPSS Statistics バージョン 18 以上が必要です。SPSS コミュニティー Web サイト www.ibm.com/developerworks/spssdevcentral からダウンロードできます。<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

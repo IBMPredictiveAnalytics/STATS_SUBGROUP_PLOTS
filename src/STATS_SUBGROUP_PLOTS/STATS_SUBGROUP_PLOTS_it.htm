@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Traccia variabili per i sottogruppi rispetto all'intero campione</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>Traccia variabili per i sottogruppi rispetto all'intero campione</h1>Questa
+procedura genera piccoli grafici per le variabili selezionate nei sottogruppi dei dati. Ogni grafico
+visualizza la distribuzione per l'intero campione con la distribuzione per il sottogruppo che si sovrappone ad esso. Ciò
+può essere particolarmente utile per comprendere i risultati del clustering, ma le variabili categoriali possono essere utilizzate
+per definire i gruppi.
+
+  <p><span class="runinhead">Sottogruppi definiti da</span> Selezionare
+una variabile per definire i sottogruppi da tracciare. I grafici verranno generati per ogni
+singolo valore della variabile.</p>
+
+  <p><span class="runinhead">Variabili da tracciare</span> Selezionare le variabili di cui
+verrà tracciata la distribuzione. Per le variabili categoriali, vengono prodotti dei grafici a barre; per le variabili di scala, i
+grafici sono degli istogrammi. Se il numero di variabili supera il limite di dimensione delle righe (vedere la finestra di dialogo
+secondaria Opzioni), ogni insieme di grafici occuperà più righe.</p>
+
+  <p class="bullet">• I grafici non includono tacche o etichette a causa
+dei vincoli di spazio. Per le variabili di scala, l'intervallo degli assi è compreso tra
+il valore minimo e il valore massimo dei dati per l'intero dataset.
+  Per le variabili
+categoriali, sono inclusi tutti i valori con etichetta e gli altri valori trovati nel sottogruppo.</p>
+
+  <p><span class="runinhead">Casi ordinati in base alla variabile sottogruppo</span>
+Selezionare questa casella se i dati sono già ordinati in base alla variabile sottogruppo per salvare una
+fase di ordinamento aggiuntiva.</p>
+
+  <h2>Opzioni</h2>
+
+  <p><span class="runinhead">Dimensione grafico individuale</span> Immettere le dimensioni orizzontale e verticale
+del grafico in pollici. Questa dimensione si riferisce ai grafici individuali, non alla dimensione globale della visualizzazione. Se
+la dimensione orizzontale è due pollici ed esistono cinque variabili, l'insieme di grafici per ogni sottogruppo sarà di dieci pollici.</p>
+
+  <p><span class="runinhead">Percentuale scaling grafico verticale</span> Immettere una percentuale in base alla quale ridurre l'area dei dati
+del grafico nella dimensione verticale. Il valore predefinito, 90, deve essere modificato solo se le etichette
+dell'asse orizzontale vengono ritagliate, il che può accadere con grafici molto piccoli.</p>
+
+  <p><span class="runinhead">Grafici per riga</span> Per impostazione predefinita, tutti i grafici per un sottogruppo vengono
+visualizzati in una sola riga (fino a dieci).
+  Specificare il numero massimo di grafici da visualizzare in una sola riga.
+  Le
+altre righe dei grafici per ogni sottogruppo vengono visualizzate come necessario.</p>
+
+  <p><span class="runinhead">Percentuale trasparenza</span> Ogni
+grafico mostra la distribuzione della variabile per il sottogruppo sovrapposta alla distribuzione di tutto il dataset. La percentuale trasparenza controlla in che modo l'intera distribuzione appare nella distribuzione
+del sottogruppo. 0 indica assenza di trasparenza, 100 indica trasparenza completa.</p>
+
+  <p><span class="runinhead">Forma dell'istogramma</span> Scegliere Area per visualizzare gli istogrammi come aree
+e Barre per visualizzarli con le barre. Scegliere Livellamento kernel per visualizzare una funzione di densità livellata.</p>
+
+  <p class="bullet">• Con Livellamento kernel, le distribuzioni dell'intero gruppo e del sottogruppo vengono scalate al numero
+di punti al loro interno. Per le altre, i due grafici sono sulla stessa scala.</p>
+
+  <p><span class="runinhead">Proporzione per Livellamento kernel</span>
+specifica la proporzione dei punti utilizzati nel calcolo della stima della funzione di densità.</p>
+
+  <p><span class="runinhead">Valori mancanti</span> Scegliere come trattare i valori mancanti. Se
+<span class="screen">Per variabile</span>, ogni gruppo utilizza tutti i dati disponibili sulla variabile. Se
+<span class="screen">Listwise</span>, in ogni grafico vengono utilizzati solo i casi in cui nessuna delle variabili
+tracciate è mancante. Per variabile ingrandisce i dati in ogni grafico; Listwise
+garantisce una base di casi congruente nei grafici.</p>
+
+  <p><span class="runinhead">Etichetta schema</span> Immettere il testo da utilizzare per
+etichettare ogni insieme di grafici nello schema del Visualizzatore. L'identificazione del sottogruppo
+viene aggiunta a questo testo.</p>
+
+  <p><span class="runinhead">Cartella temporanea</span> Una cartella temporanea può essere
+selezionata per il file di dati intermedio creato da questa procedura. Questo valore
+deve essere impostato solo se la procedura altrimenti non può trovare una cartella temporanea. Per
+motivi tecnici, questa procedura non può eliminare il file che ha scritto in questa cartella. Se
+si indica una cartella specifica, sarà più facile trovare ed eliminare tali file.</p>
+
+  <p><span class="runinhead">Colori</span> Selezionare i colori per le barre dell'intero dataset e le barre del sottogruppo. Qui
+viene elencata una selezione di colori, ma nella sintassi ne sono disponibili molti altri. Consultare la Guida
+principale nei Costanti di colori GPL per un elenco completo.</p>
+
+  <p><span class="runinhead">Modelli</span> Selezionare i modelli per le barre dell'intero dataset e del sottogruppo. Per impostazione predefinita,
+le barre sono piene.</p>
+
+  <h2>Funzioni aggiuntive</h2>
+
+  <p>Questa finestra di dialogo genera la sintassi per il comando di estensione STATS SUBGROUP PLOTS. Per visualizzare la guida per questo comando, utilizzare la sintassi riportata di seguito:</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>Requisiti</h2>Questo comando richiede Python Essentials,
+il comando di estensione STATS SUBGROUP PLOTS e almeno la versione 18 di IBM SPSS Statistics. È possibile scaricarli dal sito Web
+di SPSS Community all'indirizzo
+  www.ibm.com/developerworks/spssdevcentral.<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

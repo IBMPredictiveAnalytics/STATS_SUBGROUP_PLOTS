@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>根據整個樣本繪製子群組的圖形變數</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>根據整個樣本繪製子群組的圖形變數</h1>此程序會產生資料的跨子群組所選變數的小型圖表。每張圖表會顯示整個樣本的分佈，含有子群組分配重疊。這可能特定實用於瞭解集群結果，但任何種類變數可用於定義群組。
+
+  <p><span class="runinhead">子群組定義依據</span> 選取變數，以定義要繪製的子群組。將為變數的每個相異值產生圖表。</p>
+
+  <p><span class="runinhead">要繪製的變數</span> 選取將繪製其分佈的變數。種類變數會產生長條圖；尺度變數會產生直方圖。如果變數數目超出列大小限制（請參閱「選項」子對話框），每組圖表將使用多列。</p>
+
+  <p class="bullet">• 由於空間限制，圖形不包含刻度標記或標籤。對於尺度變數，軸範圍為整個資料集的資料最小值到資料最大值。對於種類變數，會包含所有標記的值和在子群組發現的任何其他值。</p>
+
+  <p><span class="runinhead">根據子群組變數排序觀察值</span> 如果資料已根據子群組變數排序，以儲存其他排序步驟，請勾選此方框。</p>
+
+  <h2>選項</h2>
+
+  <p><span class="runinhead">個別圖表大小</span> 以英吋為單位，輸入圖表的水平和垂直維度。此大小是指個別圖表大小，而非顯示的整體大小。如果水平大小是兩英吋，且有五個變數，則每個子群組的每組圖表寬將為十英吋。</p>
+
+  <p><span class="runinhead">垂直圖表縮放百分比</span> 在垂直維度中，輸入收縮圖表資料區的百分比。如果水平軸標籤被裁剪，只需要變更預設值 90，這種情況可能發生於非常小的圖表。</p>
+
+  <p><span class="runinhead">每列圖表</span> 依預設，子群組的所有圖表都會顯示在一列中（最多十個圖表）。指定顯示於一列的圖表數上限。每個子群組圖表的其他列將依需要顯示。</p>
+
+  <p><span class="runinhead">透明百分比</span> 每個圖表顯示整個資料集中分佈上重疊的子群組之變數分佈。透明百分比控制如何透過子群組分佈顯示整個分佈。0 表示不透明，而 100 表示完全透明。</p>
+
+  <p><span class="runinhead">直方圖形狀</span> 選擇「區域圖」以將直方圖顯示為區域圖，選擇「長條圖」以將其顯示為長條圖。選擇「核平滑法」以顯示平滑的密度函數。</p>
+
+  <p class="bullet">• 使用「核平滑法」，整個群組和子群組分佈都會調整至其中的點數。對於其他，兩張圖表將為相同尺度。</p>
+
+  <p><span class="runinhead">核平滑法比例</span>將指定用以計算密度函數估計的點之比例。</p>
+
+  <p><span class="runinhead">遺漏值</span> 選擇遺漏值處理方式。如果選擇<span class="screen">依變數</span>，每個圖形將使用變數上的所有可用資料。如果選擇<span class="screen">整批</span>，則每個圖表中僅使用未遺漏圖形化變數的觀察值。「整批」可根據變數最大化每個圖形的資料，確保圖形觀察值基礎一致。</p>
+
+  <p><span class="runinhead">概要標籤</span> 在「檢視器」概要中，輸入用於標示每組圖形的文字。附加子群組識別至此文字。</p>
+
+  <p><span class="runinhead">暫存目錄</span> 您可以為透過此程序建立的中間資料檔選取暫存目錄。只需要在程序找不到暫存目錄時設定此值。因為技術原因，此程序無法刪除寫入此目錄的檔案。指定特定目錄將讓其更易於尋找和刪除此類檔案。</p>
+
+  <p><span class="runinhead">顏色</span> 選取整個資料集長條圖和子群組長條圖的顏色。在這裡列出顏色選擇，但可從語法取得更多顏色。請參閱「GPL 顏色常數」下的主要說明，以取得完整清單。</p>
+
+  <p><span class="runinhead">型樣</span> 選取整個資料集和子群組長條圖的型樣。依預設，長條圖為實線。</p>
+
+  <h2>其他特性</h2>
+
+  <p>此對話框會產生用於 STATS SUBGROUP PLOTS 延伸指令的語法。若要顯示此指令的語法說明，請執行下列語法：</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>需求</h2>此指令需要 Python Essentials 和 STATS SUBGROUP PLOTS 延伸指令，以及至少 IBM SPSS Statistics 18 版。您可以從 SPSS 社群網站 (www.ibm.com/developerworks/spssdevcentral) 下載這些指令。<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

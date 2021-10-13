@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Tracer les variables sous forme graphique pour les sous-groupes dans l'échantillon entier</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>Tracer les variables sous forme graphique pour les sous-groupes dans l'échantillon entier</h1>Cette procédure produit de petits graphiques pour les variables sélectionnées dans des sous-groupes de données. Chaque graphique affiche la distribution de l'échantillon entier avec la distribution du sous-groupe par dessus. Cela peut être particulièrement utile pour comprendre les résultats de classification mais n'importe quelle variable catégorielle peut être utilisée pour définir les groupes.
+
+  <p><span class="runinhead">Sous-groupes définis par</span> Sélectionnez une variable pour définir les sous-groupes à tracer. Des graphiques seront générés pour chaque valeur distincte de la variable.</p>
+
+  <p><span class="runinhead">Variables à tracer</span> Sélectionnez les variables dont la distribution sera tracée. Pour les variables catégorielles, des graphiques à barres sont produits ; pour les variables d'échelle, les graphiques sont des histogrammes. Si le nombre de variables dépasse la limite de taille de ligne (voir la sous-boîte de dialogue Options), chaque ensemble de graphiques utilisera plusieurs lignes.</p>
+
+  <p class="bullet">• Les graphiques ne contiennent pas de coches ou de libellés en raison d'un espace limité. Pour les variables d'échelle, l'axe s'étend des valeurs de données minimum aux valeurs de données maximum pour tout le jeu de données.
+  Pour les variables catégorielles, toutes les valeurs étiquetées et les autres valeurs trouvées dans le sous-groupe sont incluses.</p>
+
+  <p><span class="runinhead">Les observations sont triées selon la variable de sous-groupe</span> Cochez cette case si les données sont déjà triées selon la variable de sous-groupe afin d'économiser une étape de tri supplémentaire.</p>
+
+  <h2>Options</h2>
+
+  <p><span class="runinhead">Taille de graphiques individuels</span> Saisissez les dimensions horizontale et verticale du graphique en pouces. Cette taille concerne les graphiques individuels et non la taille générale de l'affichage. Si la taille horizontale est de deux pouces et qu'il y a cinq variables, l'ensemble de graphiques de chaque sous-groupe sera d'une largeur de 10 pouces.</p>
+
+  <p><span class="runinhead">Pourcentage de mise à l'échelle verticale du graphique</span> Saisissez un pourcentage pour réduire la zone des données du graphique dans la dimension verticale. La valeur par défaut, 90, ne doit être modifiée que si les libellés de l'axe horizontal sont tronqués, ce qui peut arriver avec les très petits graphiques.</p>
+
+  <p><span class="runinhead">Graphiques par ligne</span> Par défaut, tous les graphiques d'un sous-groupe sont affichés sur une ligne (jusqu'à dix).
+  Spécifiez le nombre maximal de graphiques à afficher sur une ligne.
+  Des lignes de graphiques supplémentaires pour chaque sous-groupe sont affichées en fonction des besoins.</p>
+
+  <p><span class="runinhead">Pourcentage de transparence</span> Chaque graphique affiche la distribution de la variable pour le sous-groupe par dessus la distribution dans le jeu de données entier. Le pourcentage de transparence contrôle la façon dont la distribution entière apparaît sur la distribution du sous-groupe. 0 signifie aucune transparence et 100 signifie une transparence totale.</p>
+
+  <p><span class="runinhead">Forme de l'histogramme</span> Choisissez Zone pour afficher les histogrammes sous la forme de zones et Barres pour les afficher sous la forme de barres. Choisissez Lisseur de noyau pour afficher une fonction de densité lissée.</p>
+
+  <p class="bullet">• Avec le Lisseur de noyau, les distributions entières des groupes et des sous-groupes sont mises à l'échelle selon le nombre de points qu'ils contiennent. Pour les autres, les deux graphiques se trouvent sur la même échelle.</p>
+
+  <p>La <span class="runinhead">Proportion du lisseur de noyau</span> spécifie la proportion de points qui sont utilisés pour calculer l'estimation de la fonction de densité.</p>
+
+  <p><span class="runinhead">Valeurs manquantes</span> Choisissez le traitement des valeurs manquantes. S'il s'agit de l'option <span class="screen">Par variable</span>, chaque graphique utilise toutes les données disponibles sur la variable. S'il s'agit de l'option <span class="screen">Toute observation incomplète</span>, seules les observations dans lesquelles aucune variable représentée graphiquement ne manque sont utilisées dans chaque graphique. Par variable augmente le nombre maximal de données dans chaque graphique. Valeur incomplète garantit une base d'observations cohérente dans les graphiques.</p>
+
+  <p><span class="runinhead">Libellé de légende</span> Saisissez le texte à utiliser pour étiqueter chaque ensemble de graphiques dans la légende du visualiseur. L'identification de sous-groupe est ajoutée à ce texte.</p>
+
+  <p><span class="runinhead">Répertoire temporaire</span> Un répertoire temporaire peut être sélectionné pour le fichier de données intermédiaire créé par cette procédure. Cette valeur n'est nécessaire que si la procédure ne trouve pas de répertoire temporaire. Pour des raisons techniques, cette procédure ne peut pas effacer le fichier qu'elle crée dans ce répertoire. Spécifier un répertoire spécifique facilite la recherche et la suppression de ce genre de fichiers.</p>
+
+  <p><span class="runinhead">Couleurs</span> Sélectionnez les couleurs des barres de tout le jeu de données et des sous-groupes. Une sélection de couleurs est répertoriée ici mais d'autres couleurs sont disponibles dans la syntaxe. Consultez l'aide principale sous Constantes de couleur GPL pour obtenir une liste complète.</p>
+
+  <p><span class="runinhead">Motifs</span> Sélectionnez des motifs pour les barres de tout le jeu de données et des sous-groupes. Par défaut, les barres sont de couleur unie.</p>
+
+  <h2>Fonctions supplémentaires</h2>
+
+  <p>Cette boîte de dialogue génère une syntaxe pour la commande d'extension STATS SUBGROUP PLOTS. Pour afficher l'aide sur la syntaxe de cette commande, exécutez la syntaxe suivante :</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>Conditions requises</h2>Cette commande nécessite Python Essentials et la commande d'extension STATS SUBGROUP PLOTS et au moins la version 18 d'IBM SPSS Statistics. Vous pouvez les télécharger depuis le site Web de la communauté SPSS à l'adresse www.ibm.com/developerworks/spssdevcentral.<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

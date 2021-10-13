@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Plot Variables for Subgroups Against the Entire
+  Sample</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>Plot Variables for Subgroups Against the Entire
+  Sample</h1>This procedure produces small charts for selected
+  variables across subgroups of the data. Each chart displays the
+  distribution for the entire sample with the distribution for the
+  subgroup overlaid on it. This may be particularly useful for
+  understanding clustering results, but any categorical variable
+  can be used to define the groups.
+
+  <p><span class="runinhead">Subgroups Defined by</span> Select a
+  variable to define the subgroups to be plotted. Charts will be
+  generated for each distinct value of the variable.</p>
+
+  <p><span class="runinhead">Variables to Plot</span> Select the
+  variables whose distribution will be plotted. For categorical
+  variables, bar charts are produced; for scale variables, the
+  charts are histograms. If the number of variables exceeds the row
+  size limit (see the Options subdialog), each set of charts will
+  take multiple rows.</p>
+
+  <p class="bullet">• Graphs do not include tick marks or labels
+  due to space constraints. For scale variables, the axis range is
+  from the data minimum to the data maximum for the entire dataset.
+  For categorical variables, all labelled values and any other
+  values found in the subgroup are included.</p>
+
+  <p><span class="runinhead">Cases are sorted by the subgroup
+  variable</span> Check this box if the data are already sorted by
+  the subgroup variable in order to save an extra sorting step.</p>
+
+  <h2>Options</h2>
+
+  <p><span class="runinhead">Individual Chart Size</span> Enter the
+  horizontal and vertical dimensions of the chart in inches. This
+  size refers to the individual charts; not the overall size of the
+  display. If the horizontal size is two inches, and there are five
+  variables, the set of charts for each subgroup would be ten
+  inches wide.</p>
+
+  <p><span class="runinhead">Vertical Chart Scaling
+  Percentage</span> Enter a percentage to shrink the chart data
+  area by in the vertical dimension. The default value, 90, need
+  only be changed if the horizontal axis labels are clipped, which
+  can happen with very small charts.</p>
+
+  <p><span class="runinhead">Charts Per Row</span> By default, all
+  the charts for a subgroup are displayed in one row (up to ten).
+  Specify the maximum number of charts to appear in one row.
+  Additional rows of charts for each subgroup are displayed as
+  needed.</p>
+
+  <p><span class="runinhead">Transparency Percentage</span> Each
+  chart shows the distribution of the variable for the subgroup
+  overlaid on the distribution in the entire dataset. The
+  transparency percentage controls how the entire distribution
+  shows through the subgroup distribution. 0 means no transparency,
+  and 100 means complete transparency.</p>
+
+  <p><span class="runinhead">Histogram Shape</span> Choose Area to
+  display the histograms as areas and Bars to display them with
+  bars. Choose Kernel Smoother to display a smoothed density
+  function.</p>
+
+  <p class="bullet">• With Kernel Smoother, the entire-group and
+  subgroup distributions are each scaled to the number of points in
+  them. For the others, the two charts are on the same scale.</p>
+
+  <p><span class="runinhead">Proportion for Kernel Smoother</span>
+  specifies the proportion of points that are used in calculating
+  the density function estimate.</p>
+
+  <p><span class="runinhead">Missing Values</span> Choose the
+  missing value treatment. If <span class="screen">By
+  variable</span>, each graph uses all the data available on the
+  variable. If <span class="screen">Listwise</span>, only the cases
+  where none of the graphed variables is missing are used in each
+  graph. By variable maximizes the data in each graph; Listwise
+  ensures a consistent case base across graphs.</p>
+
+  <p><span class="runinhead">Outline Label</span> Enter text to be
+  used to label each set of graphs in the Viewer outline. The
+  subgroup identification is appended to this text.</p>
+
+  <p><span class="runinhead">Temporary Directory</span> A temporary
+  directory can be selected for the intermediate data file created
+  by this procedure. This value only needs to be set if the
+  procedure cannot otherwise find a temporary directory. For
+  technical reasons, this procecdure cannot delete the file that it
+  writes to this directory. Specifying a specific directory would
+  make it easier to find and delete such files.</p>
+
+  <p><span class="runinhead">Colors</span> Select colors for the
+  entire-dataset bars and the subgroup bars. A selection of colors
+  is listed here, but many more are available in syntax. See the
+  main help under GPL Color Constants for a complete list.</p>
+
+  <p><span class="runinhead">Patterns</span> Select patterns for
+  the entire-dataset and subgroup bars. By default, bars are
+  solid.</p>
+
+  <h2>Additional Features</h2>
+
+  <p>This dialog generates syntax for the STATS SUBGROUP PLOTS
+  extension command. To display syntax help for this command, run
+  the following syntax:</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>Requirements</h2>This command requires the Python Essentials
+  and the STATS SUBGROUP PLOTS extension command and at least
+  version 18 of IBM SPSS Statistics. You can download these from
+  the SPSS Community website at
+  www.ibm.com/developerworks/spssdevcentral.<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>
