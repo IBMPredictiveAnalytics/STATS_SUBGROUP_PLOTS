@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Wykres zmiennych w podgrupach w stosunku do całej próby</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>Wykres zmiennych w podgrupach w stosunku do całej próby</h1>Procedura ta tworzy małe wykresy dla wybranych zmiennych we wszystkich podgrupach w danych. Każdy wykres przedstawia rozkład dla całej próby z nałożonym na niego rozkładem dla podgrupy. Może to być szczególnie pomocne w zrozumieniu wyników grupowania, choć do zdefiniowania grup może zostać użyta jakakolwiek zmienna jakościowa.
+
+  <p><span class="runinhead">Grupy zdefiniowane przez</span> Wybierz zmienną definiującą podgrupy, dla których zostaną stworzone wykresy. Wykresy zostaną wygenerowane dla każdej odrębnej  wartości zmiennej.</p>
+
+  <p><span class="runinhead">Zmienne do rysowania wykresu</span> Zaznacz zmienne, których rozkłady zostaną narysowane. Dla zmiennych jakościowych tworzone są wykresy słupkowe, dla zmiennych skalarnych wykresami są histogramy. Jeśli liczba zmiennych przekracza ograniczenie rozmiaru wiersza (zobacz: podrzędne okno dialogowe Opcje), każdy zestaw wykresów zajmie wiele wierszy.</p>
+
+  <p class="bullet">• Ze względu na ograniczenia wolnego miejsca, rysunki nie zawierają znaków zaznaczenia ani etykiet. Dla zmiennych skalarnych oś ma zakres od najmniejszej wartości danych do największej wartości danych dla całego zestawu danych.
+  Dla zmiennych jakościowych włączone zostają wszystkie dane z etykietą oraz wszelkie inne wartości znajdujące się w podgrupie.</p>
+
+  <p><span class="runinhead">Przypadki są posortowane przez zmienną podgrupy</span> Zaznacz to pole, jeśli dane zostały już posortowane przez zmienną podgrupy, aby zaoszczędzić dodatkowy krok sortowania.</p>
+
+  <h2>Opcje</h2>
+
+  <p><span class="runinhead">Rozmiar pojedynczego wykresu</span> Wprowadź poziome i pionowe wymiary tablicy w calach. Ten rozmiar odnosi się do wykresów pojedynczych, nie do całkowitego rozmiaru ekranu. Jeśli wymiar poziomy wynosi dwa cale, a istnieje pięć zmiennych, zestaw wykresów dla każdej podgrupy będzie mieć szerokość dziesięciu cali.</p>
+
+  <p><span class="runinhead">Procent skalowania tablicy w pionie</span> Wprowadź procent, o który ma zostać skrócony obszar danych wykresu w kierunku pionowym. Domyślną wartość (90) trzeba zmienić tylko wtedy, jeśli etykiety osi poziomych są przycięte, co może zdarzyć się dla bardzo niewielkich wykresów.</p>
+
+  <p><span class="runinhead">Ilość wykresów w wierszu</span> Domyślnie wszystkie wykresy dla podgrupy wyświetlane są w jednym wierszu (maksymalnie dziesięć).
+  Określ maksymalną liczbę wykresów, które mają się pojawić w jednym wierszu.
+  W miarę potrzeby dla każdej podgrupy wyświetlane są dodatkowe wiersze wykresów.</p>
+
+  <p><span class="runinhead">Procent przezroczystości</span> Każdy wykres pokazuje rozkład zmiennej dla podgrupy nałożony na rozkład całego zestawu danych. Procent przezroczystości kontroluje sposób, w jaki cały rozkład jest pokazywany w stosunku do rozkładu podgrupy. 0 oznacza brak przezroczystości, a 100 oznacza całkowitą przezroczystość.</p>
+
+  <p><span class="runinhead">Kształt histogramu</span> Wybierz Obszar, aby wyświetlać histogramy jako obszary, lub Słupki, aby wyświetlać je za pomocą słupków. Wybierz Wygładzanie jądrowe, aby wyświetlić wygładzoną funkcję gęstości.</p>
+
+  <p class="bullet">• Za pomocą Wygładzania jądrowego każdy z rozkładów całej grupy i podgrupy jest skalowany w stosunku do znajdującej się w nim liczby punktów. Dla innych, dwa wykresy znajdują się na tej samej skali.</p>
+
+  <p><span class="runinhead">Proporcja dla Wygładzania jądrowego</span>
+  określa proporcję punktów, które są używane do wyliczenia estymatu funkcji gęstości.</p>
+
+  <p><span class="runinhead">Brakujące wartości</span> Wybierz podejście do brakującej wartości. Jeżeli... <span class="screen">Według zmiennej</span> każdy z wykresów używa wszystkich dostępnych danych dla danej zmiennej. Jeżeli...<span class="screen">Obserwacjami</span>, na każdym wykresie użyte zostaną tylko te zmienne, którym nie brakuje danych. Według zmiennej maksymalizuje dane na każdym wykresie, a Obserwacjami zapewnia spójną bazę przypadków dla wszystkich wykresów.</p>
+
+  <p><span class="runinhead">Etykieta opisu</span> Wprowadź tekst, który zostanie użyty do dodania etykiety dla każdego zestawu wykresów w opisie podglądu. Do tego tekstu zostanie dodana identyfikacja podgrupy.</p>
+
+  <p><span class="runinhead">Katalog tymczasowy</span> Dla tymczasowego pliku danych stworzonego przez tę procedurę można określić katalog tymczasowy. Tę wartość trzeba ustawić, tylko jeśli procedura nie może w inny sposób znaleźć katalogu tymczasowego. Z przyczyn technicznych procedura ta nie może usunąć pliku zapisywanego w tym katalogu. Określenie konkretnego katalogu ułatwi odnalezienie i usunięcie takich plików.</p>
+
+  <p><span class="runinhead">Kolory</span> Zaznacz kolory dla słupków całego zestawu danych oraz słupków podgrup. W tym miejscu wymieniono kilka kolorów, ale w komendach jest dostępnych więcej. Pełną listę można znaleźć w pomocy głównej w części Stałe kolorów GPL.</p>
+
+  <p><span class="runinhead">Wzory</span> Wybierz wzory dla słupków całego zestawu danych oraz podgrup. Domyślnie słupki są jednolite.</p>
+
+  <h2>Funkcje dodatkowe</h2>
+
+  <p>To okno dialogowe generuje komendę rozszerzającą STATS SUBGROUP PLOTS. Aby wyświetlić pomoc dotyczącą składni tej komendy, uruchom następującą komendę:</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>Wymagania</h2>Ta komenda wymaga dodatku Python Essentials
+  oraz komendy rozszerzającej STATS SUBGROUP PLOTS oraz produktu IBM SPSS Statistics przynajmniej w wersji 18. Można je pobrać z serwisu SPSS Community pod adresem www.ibm.com/developerworks/spssdevcentral/.<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

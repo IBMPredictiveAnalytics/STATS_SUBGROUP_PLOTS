@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>针对整个样本绘制子组的变量</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>针对整个样本绘制子组的变量</h1>此过程针对数据的各个子组中的所选变量生成小图表。每个图表都显示整个样本的分布，并将该子组的分布覆盖于其上。这对于了解聚类结果可能特别有帮助，但是任何分类变量均可用于定义组。
+<p><span class="runinhead">子组的定义依据</span> 请选择一个变量，以定义要绘制的子组。对于此变量的每个相异值，都将生成图表。</p>
+
+  <p><span class="runinhead">要绘制的变量</span> 请选择要绘制其分布的变量。对于分类变量，将生成条形图；对于标度变量，将生成直方图。如果变量数超出行大小限制（请参阅“选项”子对话框），那么每组图表将占用多行。</p>
+
+  <p class="bullet">• 由于空间限制，图形未显示刻度线和标签。对于标度变量，轴范围是从整个数据集的数据最小值到数据最大值。对于分类变量，将包括所有标注的值以及子组中的任何其他值。</p>
+
+  <p><span class="runinhead">个案按子组变量排序</span> 如果数据已按子组变量进行排序，请选中此框以跳过额外的排序步骤。</p>
+
+  <h2>选项</h2>
+
+  <p><span class="runinhead">单个图表大小</span> 请输入图表的水平尺寸和垂直尺寸（以英寸为单位）。此大小是指单个图表的大小，而非整体显示大小。如果水平大小为两英寸，并且有 5 个变量，那么每个子组的图表集合的宽度将是 10 英寸。</p>
+
+  <p><span class="runinhead">垂直图表缩放百分比</span> 请输入一个百分比，图表数据区的垂直尺寸将按此百分比缩小。对于非常小的图表，如果水平轴标签截断，那么需要对缺省值 90 进行更改。</p>
+
+  <p><span class="runinhead">每行图表数</span> 缺省情况下，子组的所有图表显示在一行中（最多显示 10 个）。请指定要在一行中显示的最大图表数。每个子组的其他图表行将根据需要显示。</p>
+
+  <p><span class="runinhead">透明度百分比</span> 每个图表都显示子组的变量的分布，并覆盖在整个数据集中的分布之上。透明度百分比用于控制整体分布透过子组分布显示的程度。0 表示不透明，100 表示完全透明。</p>
+
+  <p><span class="runinhead">直方图形状</span> 选择“区域”表示将直方图显示为区域，选择“条形”表示将其显示为条形。选择“核平滑器”可以显示平滑的密度函数。</p>
+
+  <p class="bullet">• 对于“核平滑器”，整体组分布和子组分布都将根据其中的点数按比例缩放。在其他情况下，两个图表的比例相同。</p>
+
+  <p><span class="runinhead">核平滑器比例</span>指定用于计算密度函数估算值的点比例。</p>
+
+  <p><span class="runinhead">缺失值</span> 请选择缺失值处理方式。如果选择<span class="screen">按变量</span>，那么每个图都将使用该变量的所有可用数据。如果选择<span class="screen">成列</span>，那么每个图都仅使用没有任何所绘制变量缺失的个案。“按变量”可以最大限度增加每个图中的数据；“按列表”可以确保各个图的个案库一致。</p>
+
+  <p><span class="runinhead">大纲标签</span> 请输入文本，用于在查看器大纲中对每一组图进行标注。子组标识将追加到此文本末尾。</p>
+
+  <p><span class="runinhead">临时目录</span> 可以选择一个临时目录，用于存储此过程所创建的中间数据文件。仅当此过程找不到临时目录时，才需要设置此值。由于技术方面的原因，此过程无法删除由其写入此目录的文件。通过指定特定的目录，可以更轻松地找到并删除此类文件。</p>
+
+  <p><span class="runinhead">颜色</span> 请选择整体数据集条形和子组条形的颜色。此处列出了一组颜色，但通过语法可以使用更多颜色。请参阅主帮助的“GPL 颜色常量”，以获取完整的列表。</p>
+
+  <p><span class="runinhead">图案</span> 请选择整体数据集条形和子组条形的图案。缺省情况下，条形显示为实心。</p>
+
+  <h2>其他功能部件</h2>
+
+  <p>此对话框将生成 STATS SUBGROUP PLOTS 扩展命令的语法。要显示此命令的语法帮助，请运行以下语法：</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP。</p>
+
+  <h2>要求</h2>此命令需要 Python Essentials 和 STATS SUBGROUP PLOTS
+扩展命令以及至少 V18 版本的 IBM SPSS Statistics。您可以从 SPSS Community
+Web 站点 (www.ibm.com/developerworks/spssdevcentral) 进行下载。<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

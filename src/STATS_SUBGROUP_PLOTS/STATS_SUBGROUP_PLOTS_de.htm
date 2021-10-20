@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Variablen für Untergruppen gegen die gesamte Stichprobe abbilden</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>Variablen für Untergruppen gegen die gesamte Stichprobe abbilden</h1>Dieses Verfahren erzeugt kleine Diagramme für ausgewählte Variablen gegenüber Untergruppen der Daten. Jedes Diagramm zeigt die Verteilung für die gesamte Stichprobe, wobei diese von der Verteilung für die Untergruppen überlagert wird. Dies kann besonders nützlich zur Veranschaulichung von Clusterergebnissen sein, zur Definition der Gruppen kann jedoch jede beliebige kategoriale Variable verwendet werden.
+
+  <p><span class="runinhead">Untergruppen definiert durch</span> Wählen Sie eine Variable zur Definition der Untergruppen aus, die im Diagramm dargestellt werden sollen. Für jeden einzelnen Wert der Variablen werden Diagramme generiert.</p>
+
+  <p><span class="runinhead">Aufzutragende Variablen</span> Wählen Sie die Variablen aus, deren Verteilung dargestellt werden soll. Für kategoriale Variablen werden Balkendiagramme erstellt, bei metrischen Variablen handelt es sich bei den Diagrammen um Histogramme. Wenn die Anzahl der Variablen die Größenbeschränkung der Zeile (siehe Unterdialogfeld "Optionen") überschreitet, erstreckt sich jede Diagrammreihe über mehrere Zeilen.</p>
+
+  <p class="bullet">•&nbsp;Aus Platzgründen enthalten die Diagramme keine Teilstriche oder Beschriftungen. Bei metrischen Variablen erstreckt sich der Achsenbereich vom Datenminimum zum Datenmaximum des gesamten Datasets.
+  Bei kategorialen Variablen werden alle beschrifteten Werte und andere in der Untergruppe gefundene Werte eingeschlossen.</p>
+
+  <p><span class="runinhead">Fälle werden nach der Untergruppenvariablen sortiert</span> Wählen Sie dieses Kontrollkästchen aus, wenn die Daten bereits nach der Untergruppenvariablen sortiert sind und Sie einen zusätzlichen Sortierungsschritt speichern möchten.</p>
+
+  <h2>Optionen</h2>
+
+  <p><span class="runinhead">Individuelle Diagrammgröße</span> Geben Sie die horizontale und vertikale Abmessung des Diagramms in Zoll ein. Dieser Wert bezieht sich auf das individuelle Diagramm, nicht auf die Gesamtgröße der Anzeige. Wenn die horizontale Länge zwei Zoll beträgt und fünf Variablen vorhanden sind, ist die Diagrammreihe für jede Untergruppe zehn Zoll breit.</p>
+
+  <p><span class="runinhead">Vertikale Diagrammskalierung in Prozent</span> Geben Sie einen Prozentsatz ein, um den der Datenbereich des Diagramms in der vertikalen Dimension verkleinert werden soll. Der Standardwert von 90 muss nur geändert werden, wenn die Beschriftungen der horizontalen Achse abgeschnitten sind, was bei sehr kleinen Diagrammen vorkommen kann.</p>
+
+  <p><span class="runinhead">Diagramme pro Zeile</span> Standardmäßig werden alle Diagramme für eine Untergruppe in einer Zeile angezeigt (bis zu zehn).
+  Geben Sie die maximale Anzahl an Diagrammen an, die einer Zeile angezeigt werden sollen.
+  Bei Bedarf werden weitere Zeilen mit Diagrammen für jede Untergruppe angezeigt.</p>
+
+  <p><span class="runinhead">Transparenz in Prozent</span> Jedes Diagramm zeigt die Verteilung der Variablen für die Untergruppe an, wobei diese die Verteilung des gesamten Datasets überlagert. Der Transparenzwert steuert, wie deutlich die Gesamtverteilung durch die Untergruppenverteilung hindurch dargestellt wird. 0 bedeutet nicht transparent und 100 bedeutet vollständig transparent.</p>
+
+  <p><span class="runinhead">Histogrammform</span> Wählen Sie entweder "Fläche" aus, um die Histogramme als Flächen anzuzeigen, oder "Balken", um sie mit Balken darzustellen. Um eine geglättete Dichtefunktion anzuzeigen, wählen Sie "Kernglättung" aus.</p>
+
+  <p class="bullet">•&nbsp;Mit der Kernglättung werden die Verteilungen der gesamten Gruppe und der Untergruppen jeweils anhand der Anzahl der darin enthaltenen Punkte skaliert. Bei den anderen haben die beiden Diagramme denselben Maßstab.</p>
+
+  <p><span class="runinhead">Anteil für Kernglättung</span> Legt den Anteil an Punkten fest, die zur Berechnung der Dichtefunktionsschätzung verwendet werden.</p>
+
+  <p><span class="runinhead">Fehlende Werte</span> Wählen Sie die Behandlungsmethode für fehlende Werte aus. Bei Auswahl von <span class="screen">Nach Variablen</span> verwendet jedes Diagramm alle für die Variable verfügbaren Daten. Bei Auswahl von <span class="screen">Listenweise</span> werden in jedem Diagramm nur die Fälle verwendet, bei denen keine der dargestellten Variablen fehlt. "Nach Variablen" maximiert die Daten in jedem Diagramm, "Listenweise" stellt eine konsistente Fallbasis für alle Diagramme sicher.</p>
+
+  <p><span class="runinhead">Gliederungsbeschriftung</span> Geben Sie Text ein, der zur Beschriftung jeder Diagrammreihe in der Gliederung des Viewers verwendet werden soll. Die Untergruppen-ID wird an diesen Text angefügt.</p>
+
+  <p><span class="runinhead">Temporäres Verzeichnis</span> Für die in diesem Verfahren erstellte Zwischendatendatei kann ein temporäres Verzeichnis ausgewählt werden. Dieser Wert muss nur festgelegt werden, wenn das Verfahren ansonsten kein temporäres Verzeichnis finden kann. Aus technischen Gründen kann bei diesem Verfahren die in diesem Verzeichnis gespeicherte Datei nicht gelöscht werden. Die Angabe eines spezifischen Verzeichnisses erleichtert die Suche und das Löschen solcher Dateien.</p>
+
+  <p><span class="runinhead">Farben</span> Wählen Sie Farben für die Balken des gesamten Datasets und die Untergruppenbalken aus. Hier wird eine Farbauswahl aufgeführt, in der Syntax sind jedoch noch wesentlich mehr Farben verfügbar. Eine vollständige Liste finden Sie in der Haupthilfe im Abschnitt zu den GPL-Farbkonstanten.</p>
+
+  <p><span class="runinhead">Muster</span> Wählen Sie Muster für die Balken des gesamten Datasets und die Untergruppenbalken aus. Standardmäßig sind die Balken ausgefüllt.</p>
+
+  <h2>Weitere Funktionen</h2>
+
+  <p>In diesem Dialogfeld wird Syntax für den Erweiterungsbefehl STATS SUBGROUP PLOTS generiert. Führen Sie folgenden Befehl aus, um die Syntaxhilfe für diesen Befehl anzuzeigen:</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>Anforderungen</h2>Für diesen Befehl sind Python Essentials und der Erweiterungsbefehl STATS SUBGROUP PLOTS sowie mindestens Version 18 von IBM SPSS Statistics erforderlich. Sie können diese von der Website der SPSS Community unter www.ibm.com/developerworks/spssdevcentral herunterladen.<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

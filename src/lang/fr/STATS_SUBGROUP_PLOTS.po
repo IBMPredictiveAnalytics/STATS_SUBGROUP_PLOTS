@@ -1,110 +1,66 @@
-#/***********************************************************************
-# * Licensed Materials - Property of IBM 
-# *
-# * IBM SPSS Products: Statistics Common
-# *
-# * (C) Copyright IBM Corp. 1989, 2014
-# *
-# * US Government Users Restricted Rights - Use, duplication or disclosure
-# * restricted by GSA ADP Schedule Contract with IBM Corp. 
-# ************************************************************************/
-
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translations template for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
+
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-02-23 17:01+Central Standard Time\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-10-11 00:34-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"Generated-By: pygettext.py 1.5\n"
-# NLS_ENCODING=UTF-8
-# IBMUPYTH
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Globalization Pipeline\n"
 
-
-#: STATS_SUBGROUP_PLOTS.py:129
 msgid "Subgroup Comparisons"
-msgstr ""
-"Comparaisons de sous-groupes"
+msgstr "Comparaisons de sous-groupes"
 
-#: STATS_SUBGROUP_PLOTS.py:204
 msgid "listwise"
-msgstr ""
-"observations incomplètes"
+msgstr "observations incomplètes"
 
-#: STATS_SUBGROUP_PLOTS.py:204
 msgid "variable by variable"
-msgstr ""
-"variable par variable"
+msgstr "variable par variable"
 
-#: STATS_SUBGROUP_PLOTS.py:205
 msgid "Subgroup Plots"
-msgstr ""
-"Tracés de sous-groupes"
+msgstr "Tracés de sous-groupes"
 
-#: STATS_SUBGROUP_PLOTS.py:206
 msgid "Chart Information"
-msgstr ""
-"Informations sur le graphique"
+msgstr "Informations sur le graphique"
 
-#: STATS_SUBGROUP_PLOTS.py:207
 msgid "Settings for the charts that follow"
-msgstr ""
-"Paramètres des graphiques suivants"
+msgstr "Paramètres des graphiques suivants"
 
-#: STATS_SUBGROUP_PLOTS.py:208
 msgid "Settings"
-msgstr ""
-"Paramètres"
+msgstr "Paramètres"
 
-#: STATS_SUBGROUP_PLOTS.py:209
 msgid "Missing Value Treatment"
-msgstr ""
-"Traitement des valeurs manquantes"
+msgstr "Traitement des valeurs manquantes"
 
-#: STATS_SUBGROUP_PLOTS.py:209
 msgid "Subgroups Defined by"
-msgstr ""
-"Sous-groupes définis par"
+msgstr "Sous-groupes définis par"
 
-#: STATS_SUBGROUP_PLOTS.py:210
 msgid "Color for Entire Sample"
-msgstr ""
-"Couleur de l'échantillon complet"
+msgstr "Couleur de l'échantillon complet"
 
-#: STATS_SUBGROUP_PLOTS.py:210
 msgid "Color for Subgroups"
-msgstr ""
-"Couleur des sous-groupes"
+msgstr "Couleur des sous-groupes"
 
-#: STATS_SUBGROUP_PLOTS.py:210
 msgid "Pattern for Entire Sample"
-msgstr ""
-"Motif de l'échantillon complet"
+msgstr "Motif de l'échantillon complet"
 
-#: STATS_SUBGROUP_PLOTS.py:211
 msgid "Pattern for Subgroups"
-msgstr ""
-"Motif des sous-groupes"
+msgstr "Motif des sous-groupes"
 
-#: STATS_SUBGROUP_PLOTS.py:212
 msgid "Value"
-msgstr ""
-"Valeur"
+msgstr "Valeur"
 
-#: STATS_SUBGROUP_PLOTS.py:597
 msgid "---"
-msgstr ""
-"---"
+msgstr "---"
 
-#: STATS_SUBGROUP_PLOTS.py:652
 msgid "Messages"
-msgstr ""
-"Messages"
-
+msgstr "Messages"

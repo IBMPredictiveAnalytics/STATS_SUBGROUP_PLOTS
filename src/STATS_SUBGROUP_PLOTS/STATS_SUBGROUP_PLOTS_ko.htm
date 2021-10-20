@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>전체 표본에 대한 부집단의 도표
+변수</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>전체 표본에 대한 부집단의 도표
+변수</h1>이 프로시저는 데이터의 부집단에 대해 선택한 변수의
+  작은 도표를 생성합니다. 각 도표는 이에 겹친 부집단에 대한 분표와 함께
+  전체 표본에 대한 분포를 표시합니다. 이는 군집 결과를 이해하는 데
+  특히 유용할 수 있지만 집단 정의를 위해 범주형 변수를
+  사용할 수 있습니다.  <p><span class="runinhead">부집단 정의 변수</span> 도표화할 부집단을 정의하려면
+  변수를 선택하십시오. 변수의 각 고유 값에 대한 도표가
+  생성됩니다.</p>
+
+  <p><span class="runinhead">도표화할 변수</span> 분포를 도표화할
+  변수를 선택하십시오. 범주형 변수의 경우, 막대도표가 생성됩니다. 척도변수의 경우 도표가 히스토그램입니다. 변수의 수가 행 크기 한계를
+  초과할 경우(옵션 하위 대화 상자 참조), 도표의 각 세트가
+  다수의 행을 사용합니다.</p>
+
+  <p class="bullet">• 공간 제약조건으로 인해 그래프에는 눈금 표시 또는 레이블이
+  포함되지 않습니다. 척도변수의 경우, 축 범위는 전체 데이터 세트의
+  데이터 최소값에서 데이터 최대값까지입니다. 범주형 변수의 경우,
+  모든 레이블된 값과 부집단에 있는 기타 값이 포함됩니다.</p>
+
+  <p><span class="runinhead">케이스는 부집단 변수별로 정렬됩니다</span> 추가 정렬 단계를
+  저장하기 위해 데이터가 부집단 변수별로 이미 정렬되어 있는 경우
+  이 상자를 선택하십시오.</p>
+
+  <h2>옵션</h2>
+
+  <p><span class="runinhead">개별 도표 크기</span> 도표의 수평 및 수직 차원(인치)을
+  입력하십시오. 이 크기는 표시의 전체 크기가 아닌 개별 도표를
+  참조합니다. 수평 크기가 2인치이고 5개의 변수가 있는 경우,
+  각 부집단에 대한 도표 세트는 10인치 너비가 됩니다.</p>
+
+  <p><span class="runinhead">수직 도표 척도 퍼센트</span> 수직 차원에서 도표 데이터 영역을
+  줄이려면 퍼센트를 입력하십시오. 기본값 90은 수평축 레이블이 클립되는 경우에만
+  변경해야 하며, 이는 매우 작은 도표에서만 발생할 수 있습니다.</p>
+
+  <p><span class="runinhead">행별 도표</span> 기본적으로, 부집단에 대한 모든 도표는 한 행으로
+  표시됩니다(최대 10개). 한 행에 표시할 최대 도표 수를 지정하십시오. 각 부집단에 대한
+  도표의 추가 행은 필요에 따라 표시됩니다.</p>
+
+  <p><span class="runinhead">투명도 퍼센트</span> 각 도표는 전체 데이터 세트의 분포에 겹친
+  해당 부집단의 변수 분포를 표시합니다. 투명도 퍼센트는 부집단 분포를 통해
+  전체 분포가 표시되는 방법을 제어합니다. 0은 투명도 없음을 의미하고
+  100은 전체 투명도를 의미합니다.</p>
+
+  <p><span class="runinhead">히스토그램 형태</span> 히스토그램을 영역으로 표시하려면
+  영역을 선택하고 막대로 표시하려면 막대를 선택하십시오. 평활된 밀도 함수를
+  표시하려면 커널 평활기를 선택하십시오.</p>
+
+  <p class="bullet">• 커널 평활기를 통해 전체 집단 및 부집단 분포가 각각 포인트 수로
+  척도화됩니다. 다른 항목의 경우 두 개의 도표가 동일한 척도에 있습니다.</p>
+
+  <p><span class="runinhead">커널 평활기의 비율</span>
+  밀도 함수 추정값을 계산하는 데 사용되는 포인트의 비율을 지정합니다.</p>
+
+  <p><span class="runinhead">결측값</span> 결측값 처리를
+  선택하십시오. <span class="screen">변수별</span>인 경우, 각 그래프는
+  변수에서 사용 가능한 모든 데이터를 사용합니다. <span class="screen">목록별</span>인 경우,
+  그래프화된 변수가 결측되지 않은 경우에만 각 그래프에서
+  사용됩니다. 변수별은 각 그래프에서 데이터를 최대화합니다. 목록별은 그래프에 대한 상수 케이스 기준을 보장합니다.</p>
+
+  <p><span class="runinhead">개요 레이블</span> 뷰어 개요에서 그래프의 각 세트를
+  레이블 지정하는 데 사용할 텍스트를 입력하십시오. 부집단 ID는
+  이 텍스트에 추가됩니다.</p>
+
+  <p><span class="runinhead">임시 디렉토리</span> 이 프로시저에서 작성된 중간 데이터
+  파일에 대해 임시 디렉토리를 선택할 수 있습니다. 프로시저가 임시
+  디렉토리를 찾을 수 없는 경우, 이 값만 설정해야 합니다. 기술적인
+  이유로 이 프로시저는 이 디렉토리에 기록되는 파일을 삭제할 수
+  없습니다. 특정 디렉토리를 지정하면 이러한 파일을 찾고 삭제하기가
+  더 쉬워집니다.</p>
+
+  <p><span class="runinhead">색상</span> 전체 데이터 세트 막대 및 부집단 막대에 대한
+  색상을 선택하십시오. 색상 선택영역은 여기에 나열되지만 명령문에서는
+  더 많이 사용할 수 있습니다. 전체 목록의 경우 GPL 색상 상수 아래의 주 도움말을
+  참조하십시오.</p>
+
+  <p><span class="runinhead">패턴</span> 전체 데이터 세트 및 부집단 막대에 대한 패턴을
+  선택하십시오. 기본적으로 막대는 단선입니다.</p>
+
+  <h2>추가 기능</h2>
+
+  <p>이 대화 상자는 STATS SUBGROUP PLOTS 확장 명령문에 대한
+  명령문을 생성합니다. 이 명령에 대한 구문 도움말을 표시하려면 다음 구문을 실행하십시오:</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>요구 사항</h2>이 명령문에는 Python Essentials 및
+  STATS SUBGROUP PLOTS 확장 명령문과 최소 버전 18의
+  IBM SPSS Statistics가 필요합니다. SPSS Community 웹 사이트(www.ibm.com/developerworks/spssdevcentral)에서
+  다운로드할 수 있습니다.<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>

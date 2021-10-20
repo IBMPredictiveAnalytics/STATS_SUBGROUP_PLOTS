@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Plotar Variáveis para Subgrupos Contra Toda a Amostra</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  -->  
+  </style>
+</head>
+
+<body>
+  <h1>Plotar Variáveis para Subgrupos Contra Toda a Amostra</h1>Este procedimento produz pequenos gráficos para as variáveis selecionadas através dos subgrupos de dados. Cada gráfico exibe a distribuição para toda a amostra com a distribuição para o subgrupo sobreposto nele. Isso pode ser particularmente útil para entender os resultados de agrupamento, mas qualquer variável categórica pode ser usada para definir os grupos.
+
+  <p><span class="runinhead">Subgrupos Definidos por</span> Selecione   uma variável para definir os subgrupos dos quais será criado um gráfico. Os gráficos serão gerados para cada valor distinto da variável.</p>
+
+  <p><span class="runinhead">Variáveis para Criar Gráfico</span> Selecione   as variáveis de cuja distribuição será criado um gráfico. Para variáveis categóricas, gráficos de barras são produzidos; para variáveis de escala, os gráficos são histogramas. Se o número de variáveis exceder o limite de tamanho de linha (consulte o subdiálogo Opções), cada conjunto de gráficos tomará diversas linhas.</p>
+
+  <p class="bullet">• Gráficos não incluem marcações ou rótulos devido a restrições de espaço. Para variáveis de escala, a amplitude de eixo é a partir do mínimo de dados para o máximo de dados para todo o conjunto de dados.
+  Para variáveis categóricas, todos os valores etiquetados e quaisquer outros valores encontrados no subgrupo são incluídos.</p>
+
+  <p><span class="runinhead">Casos são ordenados pela variável   de subgrupo</span> Marque esta caixa se os dados já estiverem   ordenados por variável de subgrupo para salvar um passo de ordenação extra.</p>
+
+  <h2>Opções</h2>
+
+  <p><span class="runinhead">Tamanho do Gráfico Individual</span> Insira   as dimensões horizontais e verticais do gráfico em polegadas. Esse tamanho se refere aos gráficos individuais, não ao tamanho geral da exibição. Se o tamanho horizontal for de duas polegadas e houver cinco variáveis, o conjunto de gráficos para cada subgrupo seria de dez polegadas de largura.</p>
+
+  <p><span class="runinhead">Porcentagem de Ajuste de Escala de Gráfico   Vertical</span> Insira uma porcentagem pela qual reduzir a área de   dados do gráfico na dimensão vertical. O valor padrão, 90, precisa ser alterado apenas se os rótulos do eixo horizontal forem cortadas, o que pode acontecer com gráficos muito pequenos.</p>
+
+  <p><span class="runinhead">Gráficos por Linha</span> Por padrão,   todos os gráficos para um subgrupo são exibidos em uma linha (até dez).
+  Especifique o número máximo de gráficos para aparecer em uma linha.
+  Linhas adicionais de gráficos para cada subgrupo são exibidas conforme o necessário.</p>
+
+  <p><span class="runinhead">Porcentagem de Transparência</span> Cada   gráfico mostra a distribuição da variável para o subgrupo sobreposto   na distribuição no conjunto de dados inteiro. A porcentagem de transparência controla como toda a distribuição aparece através da distribuição do subgrupo. 0 significa nenhuma transparência e 100 significa transparência completa.</p>
+
+  <p><span class="runinhead">Forma de Histograma</span> Escolha Área   para exibir os histogramas como áreas e Barras para exibi-los com   barras. Escolha Suavizador de Kernel para exibir uma função de densidade suavizada.</p>
+
+  <p class="bullet">• Com o Suavizador de Kernel, as distribuições   de grupo inteiro e subgrupo são escaladas para o número de pontos   nelas. Para os outros, os dois gráficos estão na mesma escala.</p>
+
+  <p><span class="runinhead">Proporção para Suavizador de Kernel</span>   Especifica a proporção de pontos que são usados para calcular a   estimativa de função de densidade.</p>
+
+  <p><span class="runinhead">Valores Omissos</span> Escolha o   tratamento de valor omisso. Se for <span class="screen">Por   variável</span>, cada gráfico usará todos os dados disponíveis   na variável. Se for <span class="screen">Listwise</span>, apenas   os casos nos quais nenhuma variável em gráfico está omissa serão   usados em cada gráfico. Por variável maximiza os dados em cada gráfico; Listwise garante uma base de caso consistente através dos gráficos.</p>
+
+  <p><span class="runinhead">Rótulo da Estrutura de Tópicos</span> Insira   texto para ser usado para rotular cada conjunto de gráficos na estrutura   de tópicos do Visualizador. A identificação do subgrupo é anexada a este texto.</p>
+
+  <p><span class="runinhead">Diretório Temporário</span> Um diretório temporário   pode ser selecionado para o arquivo de dados intermediário criado pelo procedimento. Esse valor precisa ser configurado apenas se o procedimento não puder localizar de outra forma um diretório temporário. Por questões técnicas, esse procedimento não pode excluir o arquivo que grava nesse diretório. Especificar um diretório específico tornaria mais fácil localizar e excluir esses arquivos.</p>
+
+  <p><span class="runinhead">Cores</span> Selecione cores para   as barras do conjunto de dados inteiro e para as barras do   subgrupo. Uma seleção de cores é listada aqui, mas muitas outras estão disponíveis na sintaxe. Consulte a ajuda principal sob Constantes de cor GPL para uma lista completa.</p>
+
+  <p><span class="runinhead">Padrões</span> Selecione padrões   para as barras de subgrupo e conjunto de dados inteiro. Por padrão, as barras são sólidas.</p>
+
+  <h2>Recursos adicionais</h2>
+
+  <p>Esta caixa de diálogo gera sintaxe para o comando de extensão STATS SUBGROUP PLOTS. Para exibir ajuda de sintaxe para este comando, execute a seguinte sintaxe:</p>
+
+  <p class="codeblock">STATS SUBGROUP PLOTS /HELP.</p>
+
+  <h2>Requisitos</h2>Esse comando requer o Python Essentials, o comando de extensão STATS SUBGROUP PLOTS e pelo menos a versão 18 do IBM SPSS Statistics. Você pode fazer o download deles no website SPSS Community em www.ibm.com/developerworks/spssdevcentral.<br>
+  <hr>
+
+  <p style="font-size:80%;">
+  © Copyright IBM Corp. 1989, 2013</p>
+</body>
+</html>
