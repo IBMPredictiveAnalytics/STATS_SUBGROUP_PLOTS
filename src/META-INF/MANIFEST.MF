@@ -1,4 +1,5 @@
 Name: STATS SUBGROUP PLOTS
+Display-Name: Subgroup Plots
 Dialog-Specs: STATS_SUBGROUP_PLOTS.spd
 Command-Specs: STATS_SUBGROUP_PLOTS.xml
 Code-Files: STATS_SUBGROUP_PLOTS.py
